@@ -1,0 +1,372 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+@import '../../../../vendor/filament/filament/resources/css/base.css';
+
+@config 'tailwind.config.js';
+
+@layer components {
+    /* Keep FileUpload filename readable in light mode. */
+    .fi-fo-file-upload .filepond--file {
+        color: rgba(var(--gray-900), 1) !important;
+    }
+
+    .fi-fo-file-upload .filepond--file-info-main,
+    .fi-fo-file-upload .filepond--file-info-sub,
+    .fi-fo-file-upload .filepond--file-status-main,
+    .fi-fo-file-upload .filepond--file-status-sub {
+        color: rgba(var(--gray-800), 1) !important;
+    }
+}
+
+@layer components {
+    .ti-dashboard-shell {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    @media (min-width: 640px) {
+        .ti-dashboard-shell {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .ti-dashboard-shell {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+
+    .ti-dashboard-header {
+        color: #fff;
+        background-image: linear-gradient(90deg, #2563eb 0%, #14b8a6 100%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 0.75rem;
+    }
+}
+
+/* Filament Light Design System */
+.fi-body {
+    background: #f9fafb !important;
+    color: #111827 !important;
+}
+
+.fi-main,
+.fi-main-ctn {
+    background: #f9fafb !important;
+}
+
+.fi-topbar {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    box-shadow: none !important;
+}
+
+.fi-main-sidebar,
+.fi-sidebar {
+    background: #111827 !important;
+    border-right: 1px solid #1f2937 !important;
+}
+
+.fi-sidebar-header,
+.fi-sidebar-nav {
+    background: transparent !important;
+}
+
+.fi-sidebar .fi-logo,
+.fi-sidebar .fi-logo * {
+    color: #ffffff !important;
+}
+
+.fi-sidebar-item-button {
+    padding: 0.625rem 1rem !important;
+    border-radius: 0.5rem !important;
+    transition: all 200ms ease !important;
+}
+
+.fi-sidebar-item-label {
+    color: #9ca3af !important;
+}
+
+.fi-sidebar-item-icon {
+    color: #6b7280 !important;
+    transition: color 200ms ease !important;
+}
+
+.fi-sidebar-item-button:hover {
+    background: #1f2937 !important;
+}
+
+.fi-sidebar-item-button:hover .fi-sidebar-item-label,
+.fi-sidebar-item-button:hover .fi-sidebar-item-icon {
+    color: #f3f4f6 !important;
+}
+
+.fi-sidebar-item.fi-active .fi-sidebar-item-button {
+    background: #1f2937 !important;
+    border-left: 2px solid #3b82f6 !important;
+    font-weight: 500 !important;
+    padding-left: calc(1rem - 2px) !important;
+}
+
+.fi-sidebar-item.fi-active .fi-sidebar-item-label,
+.fi-sidebar-item.fi-active .fi-sidebar-item-icon {
+    color: #ffffff !important;
+}
+
+.fi-sidebar-nav-groups {
+    row-gap: 2rem !important;
+}
+
+.fi-sidebar-group {
+    margin-top: 1.5rem !important;
+}
+
+.fi-sidebar-nav-groups > .fi-sidebar-group:first-child {
+    margin-top: 0 !important;
+}
+
+.fi-sidebar-group-label {
+    margin-top: 1.5rem !important;
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #6b7280 !important;
+}
+
+.fi-sidebar-group-button {
+    transition: all 200ms ease !important;
+}
+
+.fi-sidebar-group-button:hover {
+    background: #1f2937 !important;
+    border-radius: 0.5rem !important;
+}
+
+.fi-sidebar-group-button:hover .fi-sidebar-group-icon {
+    color: #d1d5db !important;
+}
+
+.fi-section,
+.fi-ta,
+.fi-modal-window {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06) !important;
+}
+
+.fi-btn {
+    border-radius: 0.5rem !important;
+}
+
+.fi-btn-color-primary {
+    background: #111827 !important;
+    border-color: #111827 !important;
+    color: #ffffff !important;
+}
+
+.fi-btn-color-primary:hover {
+    background: #1f2937 !important;
+    border-color: #1f2937 !important;
+}
+
+.fi-btn-color-gray {
+    background: #f3f4f6 !important;
+    border-color: #f3f4f6 !important;
+    color: #374151 !important;
+}
+
+.fi-btn-color-gray:hover {
+    background: #e5e7eb !important;
+    border-color: #e5e7eb !important;
+}
+
+.fi-btn-color-danger {
+    background: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: #ffffff !important;
+}
+
+.fi-btn-color-danger:hover {
+    background: #dc2626 !important;
+    border-color: #dc2626 !important;
+}
+
+/* Premium Login Layout */
+.ti-login-layout .fi-input-wrp,
+.ti-login-layout .fi-select-input,
+.ti-login-layout .fi-ta-textarea {
+    border-radius: 0.5rem !important;
+}
+
+.ti-login-layout input[type='email'],
+.ti-login-layout input[type='password'],
+.ti-login-layout input[type='text'] {
+    border-radius: 0.5rem !important;
+    border-color: #d1d5db !important;
+    padding: 0.75rem 1rem !important;
+    transition: all 200ms ease !important;
+}
+
+.ti-login-layout input[type='email']:focus,
+.ti-login-layout input[type='password']:focus,
+.ti-login-layout input[type='text']:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+}
+
+.ti-login-submit {
+    width: 100% !important;
+    border-radius: 0.5rem !important;
+    background: #111827 !important;
+    border-color: #111827 !important;
+    color: #ffffff !important;
+    font-weight: 500 !important;
+    transition: all 200ms ease !important;
+}
+
+.ti-login-submit:hover {
+    background: #1f2937 !important;
+    border-color: #1f2937 !important;
+}
+
+.ti-login-page {
+    min-height: 100vh;
+    background: #f9fafb;
+}
+
+.ti-login-grid {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.ti-login-brand-panel {
+    display: none;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 45%, #14b8a6 100%);
+}
+
+.ti-login-brand-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.22);
+}
+
+.ti-login-brand-content {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    width: min(560px, 100%);
+    height: 100%;
+    padding: 2.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.ti-login-brand-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.ti-login-brand-title {
+    margin: 0;
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.ti-login-brand-description {
+    margin: 0;
+    color: #dbeafe;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.ti-login-brand-illustration-wrap {
+    border: 0;
+    background: transparent;
+    backdrop-filter: none;
+    padding: 0;
+}
+
+.ti-login-brand-illustration {
+    width: 88%;
+    max-height: 42vh;
+    height: auto;
+    opacity: 0.9;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.ti-login-brand-copyright {
+    margin: 0;
+    color: rgba(219, 234, 254, 0.9);
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+.ti-login-form-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    padding: 2rem 1.25rem;
+}
+
+.ti-login-form-container {
+    width: 100%;
+    max-width: 28rem;
+}
+
+.ti-login-form-card {
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    padding: 2rem;
+}
+
+.ti-login-form-head {
+    margin-bottom: 1.5rem;
+}
+
+.ti-login-form-title {
+    margin: 0 0 0.25rem 0;
+    color: #111827;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.ti-login-form-subtitle {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+@media (min-width: 1024px) {
+    .ti-login-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ti-login-brand-panel {
+        display: block;
+    }
+
+    .ti-login-form-panel {
+        padding: 2.5rem;
+    }
+}
