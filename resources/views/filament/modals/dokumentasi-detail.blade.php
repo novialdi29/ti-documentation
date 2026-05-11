@@ -9,38 +9,56 @@
 @endphp
 
 <div class="max-h-[70vh] space-y-6 overflow-y-auto pr-1">
+    <div class="rounded-xl border border-gray-200 bg-white p-4">
+        <p class="text-sm text-gray-500">Informasi Ticket</p>
+        <div class="mt-3 grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div>
+                <p class="text-xs text-gray-500">Nomor Ticket</p>
+                <p class="font-medium text-gray-900">{{ $record->nomor_ticket ?: '-' }}</p>
+            </div>
+            <div>
+                <p class="text-xs text-gray-500">Tanggal Ticket</p>
+                <p class="font-medium text-gray-900">{{ $record->tanggal_ticket?->translatedFormat('d F Y') ?? '-' }}</p>
+            </div>
+            <div>
+                <p class="text-xs text-gray-500">Unit / Fakultas</p>
+                <p class="font-medium text-gray-900">{{ $record->lokasi_unit ?: '-' }}</p>
+            </div>
+            <div>
+                <p class="text-xs text-gray-500">PIC Unit</p>
+                <p class="font-medium text-gray-900">{{ $record->nama_pic ?: '-' }}</p>
+            </div>
+            <div>
+                <p class="text-xs text-gray-500">Teknisi</p>
+                <p class="font-medium text-gray-900">{{ $record->user?->name ?? '-' }}</p>
+            </div>
+            <div>
+                <p class="text-xs text-gray-500">Kategori</p>
+                <p class="font-medium text-gray-900">{{ $record->kategori?->nama ?? '-' }}</p>
+            </div>
+            <div>
+                <p class="text-xs text-gray-500">Status</p>
+                <span class="inline-flex rounded-full px-2.5 py-1 text-xs font-semibold {{ $statusColor }}">
+                    {{ ucfirst($record->status) }}
+                </span>
+            </div>
+            <div>
+                <p class="text-xs text-gray-500">Catatan Verifikasi</p>
+                <p class="font-medium text-gray-900">{{ $record->catatan_verifikasi ?: '-' }}</p>
+            </div>
+        </div>
+    </div>
+
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         <div>
-            <p class="text-sm text-gray-500">Judul</p>
+            <p class="text-sm text-gray-500">Judul Pekerjaan</p>
             <p class="font-medium text-gray-900">{{ $record->judul }}</p>
-        </div>
-        <div>
-            <p class="text-sm text-gray-500">Kategori</p>
-            <p class="font-medium text-gray-900">{{ $record->kategori?->nama ?? '-' }}</p>
-        </div>
-        <div>
-            <p class="text-sm text-gray-500">Teknisi</p>
-            <p class="font-medium text-gray-900">{{ $record->user?->name ?? '-' }}</p>
-        </div>
-        <div>
-            <p class="text-sm text-gray-500">Tanggal</p>
-            <p class="font-medium text-gray-900">{{ $record->created_at?->format('d M Y H:i') ?? '-' }}</p>
-        </div>
-        <div>
-            <p class="text-sm text-gray-500">Status</p>
-            <span class="inline-flex rounded-full px-2.5 py-1 text-xs font-semibold {{ $statusColor }}">
-                {{ ucfirst($record->status) }}
-            </span>
-        </div>
-        <div>
-            <p class="text-sm text-gray-500">Catatan Verifikasi</p>
-            <p class="font-medium text-gray-900">{{ $record->catatan_verifikasi ?: '-' }}</p>
         </div>
     </div>
 
     <div class="space-y-4">
         <div class="rounded-xl border border-gray-200 bg-white p-4">
-            <p class="text-sm text-gray-500">Deskripsi Masalah</p>
+            <p class="text-sm text-gray-500">Keluhan / Permasalahan</p>
             <div class="mt-1 text-sm font-medium text-gray-900">
                 {!! nl2br(e(strip_tags((string) $record->deskripsi))) !!}
             </div>

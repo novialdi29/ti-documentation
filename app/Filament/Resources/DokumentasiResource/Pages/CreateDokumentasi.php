@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\DokumentasiResource\Pages;
 
 use App\Filament\Resources\DokumentasiResource;
+use App\Models\Dokumentasi;
 use App\Models\User;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\CreateRecord;
@@ -15,6 +16,8 @@ class CreateDokumentasi extends CreateRecord
     protected function mutateFormDataBeforeCreate(array $data): array
     {
         $data['user_id'] = $data['user_id'] ?? auth()->id();
+        $data['nomor_ticket'] = Dokumentasi::generateNomorTicket();
+        $data['tanggal_ticket'] = $data['tanggal_ticket'] ?? now()->toDateString();
 
         if (auth()->user()?->hasRole('teknisi')) {
             $data['status'] = 'pending';

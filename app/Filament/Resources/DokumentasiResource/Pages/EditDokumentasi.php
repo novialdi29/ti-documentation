@@ -20,6 +20,8 @@ class EditDokumentasi extends EditRecord
 
     protected function mutateFormDataBeforeSave(array $data): array
     {
+        $data['nomor_ticket'] = $this->record->nomor_ticket;
+
         if (auth()->user()?->hasRole('teknisi')) {
             $data['status'] = 'pending';
             $data['verified_by'] = null;

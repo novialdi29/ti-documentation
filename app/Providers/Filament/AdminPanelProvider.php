@@ -26,6 +26,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login(\App\Filament\Pages\Auth\Login::class)
+            ->profile()
             ->darkMode(false)
             ->theme(asset('css/filament/admin/theme.css'))
             ->databaseNotifications()

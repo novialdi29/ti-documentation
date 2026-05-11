@@ -370,3 +370,50 @@
         padding: 2.5rem;
     }
 }
+
+/* Dokumentasi Table Polish */
+.fi-ta-header-cell {
+    background: #f9fafb !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+.fi-ta-header-cell-label {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #6b7280 !important;
+}
+
+.fi-ta-search-field .fi-input-wrp {
+    border-radius: 0.75rem !important;
+    border-color: #e5e7eb !important;
+    background: #ffffff !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06) !important;
+}
+
+.fi-ta-search-field .fi-input-wrp:focus-within {
+    --tw-ring-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.18) !important;
+    border-color: #bfdbfe !important;
+}
+
+.fi-ta-row {
+    transition: background-color 180ms ease !important;
+}
+
+.fi-ta-row:hover {
+    background: #f9fafb !important;
+}
+
+.fi-ta-cell {
+    vertical-align: middle !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.fi-badge {
+    border-radius: 9999px !important;
+    font-weight: 500 !important;
+}

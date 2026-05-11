@@ -9,7 +9,10 @@ class Kategori extends Model
 {
     protected $fillable = [
         'nama',
+        'slug',
         'deskripsi',
+        'tipe',
+        'warna_badge',
         'is_active',
     ];
 
